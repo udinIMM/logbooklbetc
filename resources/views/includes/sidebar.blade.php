@@ -32,7 +32,8 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MAIN NAVIGATION</li>
       <!-- Optionally, you can add icons to the links -->
-      <li class="active"><a href="{{ url('/home') }}"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+      <li><a href="{{ url('/home') }}"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+      <li><a href="{{ url('/peserta') }}"><i class="fa fa-home"></i> <span>Peserta</span></a></li>
       <li class="treeview">
         <a href="#"><i class="fa fa-list-alt"></i> <span>Laboratorium</span>
               <span class="pull-right-container">

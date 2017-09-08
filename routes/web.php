@@ -24,9 +24,12 @@ Route::get('/home', function () {
 });
 
 Route::get('testing', function () {
-    return view('layouts.layouts');
+    return view('includes.content.home');
 });
 
 Route::get('/kdpm', function () {
     return view('kdpm');
 });
+
+Route::resource('/peserta', 'PesertaController');
+
