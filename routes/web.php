@@ -32,4 +32,4 @@ Route::get('/kdpm', function () {
 });
 
 Route::resource('/peserta', 'PesertaController');
-
+Route::resource('/log', 'LogController');

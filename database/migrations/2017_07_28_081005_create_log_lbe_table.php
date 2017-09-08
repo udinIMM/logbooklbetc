@@ -16,7 +16,7 @@ class CreateLogLbeTable extends Migration
         Schema::create('log_lbe', function (Blueprint $table) {
             $table->increments('id_log');
             $table->integer('id_peserta')->unsigned();
-            $table->date('tanggal_log');
+            $table->dateTime('tanggal_log');
             $table->string('judul_log');
             $table->string('isi_log',2048);
             $table->string('narasumber_log');
@@ -29,7 +29,7 @@ class CreateLogLbeTable extends Migration
             ->references('id')->on('users')
             ->onDelete('cascade');
         });
-        
+
     }
 
     /**
