@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PesertaController extends Controller
+class LogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class PesertaController extends Controller
      */
     public function index()
     {
-        return view('peserta.index',compact('usr'));
-        $usr=users::paginate(20);
+        return view('log.index');
     }
 
     /**
@@ -25,7 +24,7 @@ class PesertaController extends Controller
      */
     public function create()
     {
-        return view('peserta.create');
+        return view('log.create');
     }
 
     /**

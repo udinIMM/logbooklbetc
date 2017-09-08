@@ -33,8 +33,9 @@
       <li class="header">MAIN NAVIGATION</li>
       <!-- Optionally, you can add icons to the links -->
       <li><a href="{{ url('/home') }}"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-      <li><a href="{{ url('/peserta') }}"><i class="fa fa-home"></i> <span>Peserta</span></a></li>
-      <li class="treeview">
+      <li><a href="{{ url('/log') }}"><i class="fa fa-home"></i> <span>Logbook LBE</span></a></li>
+      <li><a href="{{ url('/peserta') }}"><i class="fa fa-home"></i> <span>Peserta LBE</span></a></li>
+      <!-- <li class="treeview">
         <a href="#"><i class="fa fa-list-alt"></i> <span>Laboratorium</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -44,7 +45,7 @@
           <li><a href="#">LBE User List</a></li>
           <li><a href="#">Add LBE User</a></li>
         </ul>
-      </li>
+      </li> -->
       <li><a href="#"><i class="fa fa-gears"></i> <span>Setting</span></a></li>
     </ul>
     <!-- /.sidebar-menu -->
