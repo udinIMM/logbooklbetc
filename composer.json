@@ -10,14 +10,10 @@
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4",
-<<<<<<< HEAD
+        "maatwebsite/excel": "~2.1.0",
         "spatie/laravel-permission": "^2.3",
         "unisharp/laravel-ckeditor": "^4.6",
         "webpatser/laravel-uuid": "^3.0"
-=======
-        "maatwebsite/excel": "~2.1.0",
-        "spatie/laravel-permission": "^2.3"
->>>>>>> master
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

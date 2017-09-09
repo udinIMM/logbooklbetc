@@ -22,22 +22,24 @@
           <table id="example1" class="table table-bordered table-striped">
             <thead>
             <tr>
-              <th>NRP</th>
-              <th>Nama</th>
-              <th>Peran</th>
+              <th>Tanggal</th>
+              <th>Judul</th>
+              <th>Isi</th>
+              <th>Pemateri</th>
+              <th>Status</th>
               <th>Menu</th>
-              <!-- <th>Engine version</th>
-              <th>CSS grade</th> -->
             </tr>
             </thead>
             <tbody>
             <tr>
-              <td>nrp</td>
-              <td>nama
+              <td>tanggal</td>
+              <td>judul
               </td>
-              <td>Peserta LBE</td>
+              <td>isi</td>
+              <th>Pemateri</th>
+              <th>Status</th>
               <td align="center" width="30px">
-                <a href="/log/{{$log->id}}/edit" class="btn btn-warning btn-sm" role="button">
+                <a href="#" class="btn btn-warning btn-sm" role="button">
                 <i class="fa fa-pencil-square"></i> Edit</a>
               </td>
 
