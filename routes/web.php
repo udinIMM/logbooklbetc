@@ -17,19 +17,23 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::resource('/peserta', 'PesertaController');
+Route::resource('/home', 'HomeController');
+Route::resource('/log', 'LogController');
+
 // Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
 Route::get('testing', function () {
     return view('includes.content.home');
 });
 
-Route::get('/kdpm', function () {
-    return view('kdpm');
-});
+// Route::get('/kdpm', function () {
+//     return view('kdpm');
+// });
 
 Route::resource('/peserta', 'PesertaController');
 Route::resource('/log', 'LogController');
