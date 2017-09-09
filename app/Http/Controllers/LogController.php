@@ -100,9 +100,11 @@ class LogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(log $log)
     {
-        //
+        $logbook = logs::findorfail($logs);
+        return view ('log.edit',compact('logbook'));
+
     }
 
     /**

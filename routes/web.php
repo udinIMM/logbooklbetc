@@ -21,11 +21,11 @@ Route::resource('/peserta', 'PesertaController');
 Route::resource('/home', 'HomeController');
 Route::resource('/log', 'LogController');
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/peserta/addcsv', function () {
+    return view('peserta.addcsv');
+});
 
-// Route::get('/home', function () {
-//     return view('home');
-// });
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('testing', function () {
     return view('includes.content.home');

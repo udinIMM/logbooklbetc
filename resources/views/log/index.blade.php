@@ -36,7 +36,11 @@
               <td>nama
               </td>
               <td>Peserta LBE</td>
-              <td> </td>
+              <td align="center" width="30px">
+                <a href="/log/{{$log->id}}/edit" class="btn btn-warning btn-sm" role="button">
+                <i class="fa fa-pencil-square"></i> Edit</a>
+              </td>
+
               <!-- <td>X</td> -->
             </tr>
             </tbody>

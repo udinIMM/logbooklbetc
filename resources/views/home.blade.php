@@ -20,7 +20,6 @@
             <div class="col-md-3">
                 <a href="{{ route('log.index')}}" class="btn btn-primary btn-lg btn-block btn-huge">Logbook LBE</a>
             </div>
-            <br/>
             <div class="col-md-3">
                 <a href="{{ route('peserta.index')}}" class="btn btn-primary btn-lg btn-block btn-huge">Peserta LBE</a>
             </div>

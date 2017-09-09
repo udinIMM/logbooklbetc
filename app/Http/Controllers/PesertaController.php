@@ -36,7 +36,8 @@ class PesertaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        users::create($request->all());
+        return redirect('/peserta');
     }
 
     /**
