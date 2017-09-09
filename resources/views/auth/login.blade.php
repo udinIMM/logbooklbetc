@@ -30,17 +30,17 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{ route('login') }}"><b>Logbook</b> LBE</a>
+    <a href="{{ URL('/login') }}"><b>Logbook</b> LBE</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Login to start your session</p>
 
-    <form action="{{ route('login') }}" method="post">
+    <form action="{{ URL('/login') }}" method="post">
     {{ csrf_field() }}
 
       <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }} has-feedback">
-        <input id="username" type="text" class="form-control" placeholder="Username" name="username" value="{{ old('username') }}" required autofocus>
+        <input id="username" type="text" class="form-control" placeholder="NRP" name="nrp" value="{{ old('username') }}" required autofocus>
 
         @if ($errors->has('username'))
             <span class="help-block">
@@ -111,8 +111,8 @@
     </div> -->
     <!-- /.social-auth-links -->
 
-    <a href="{{ route('password.request') }}">I forgot my password</a><br>
-    <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
+    <a href="#">I forgot my password</a><br>
+    <a href="{{ URL('/register') }}" class="text-center">Register a new membership</a>
 
   </div>
   <!-- /.login-box-body -->

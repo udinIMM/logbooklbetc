@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Redirect;
 
 Use Uuid;
-use App\Log_lbe;
+use App\Log;
 use Carbon\Carbon;
 
 class LogController extends Controller
@@ -64,20 +65,20 @@ class LogController extends Controller
 
       $mytime = Carbon::now();
 
-      $log = new Log_lbe;
-      $log->id_log = Uuid::generate();
-      $log->judul_log = $request->judul;
-      $log->isi_log = $request->lecturer;
-      $log->status_log = "Unverified";
-      $log->tanggal_log = $mytime->toDateTimeString();
+      $log = new Log;
+      $log->id = Uuid::generate();
+      $log->judul = $request->judul;
+      $log->isi = $request->lecturer;
+      $log->status = "Unverified";
+      $log->tanggal = $mytime->toDateTimeString();
 
       if($log->save())
       {
-          return Redirect::to($request->url())
+          return Redirect::to($request->url());
       }
       else
       {
-          return Redirect::to($request->url().'/create')
+          return Redirect::to($request->url().'/create');
       }
 
     }

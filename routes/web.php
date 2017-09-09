@@ -33,3 +33,7 @@ Route::get('/kdpm', function () {
 
 Route::resource('/peserta', 'PesertaController');
 Route::resource('/log', 'LogController');
+Route::get('/login', 'AuthController@index');
+Route::post('/login', 'AuthController@login');
+Route::get('/register', 'AuthController@register');
+Route::post('/register', 'AuthController@create');

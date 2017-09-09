@@ -30,13 +30,13 @@
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="{{ route('register') }}"><b>Logbook</b> LBE</a>
+    <a href="{{ URL('/register') }}"><b>Logbook</b> LBE</a>
   </div>
 
   <div class="register-box-body">
     <p class="login-box-msg">Register a new membership</p>
 
-    <form role="form" accept-charset="UTF-8" action="{{ route('register') }}" method="post">
+    <form role="form" accept-charset="UTF-8" action="{{ URL('/register') }}" method="post">
     {{ csrf_field() }}
 
       <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }} has-feedback">
@@ -53,7 +53,7 @@
 
         <div class="form-group{{ $errors->has('nrp_peserta') ? ' has-error' : '' }} has-feedback">
             <!-- <label for="nrp_peserta" class="col-md-4 control-label">NRP</label> -->
-            <input id="nrp_peserta" type="text" class="form-control" name="nrp_peserta" placeholder="NRP" value="{{ old('nrp_peserta') }}" required autofocus>
+            <input id="nrp_peserta" type="text" class="form-control" name="nrp" placeholder="NRP" value="{{ old('nrp_peserta') }}" required autofocus>
 
             @if ($errors->has('nrp_peserta'))
                 <span class="help-block">
@@ -61,18 +61,6 @@
                 </span>
             @endif
         </div>
-
-      <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }} has-feedback">
-        <input id="username" type="text" class="form-control" name="username" placeholder="Username" value="{{ old('username') }}" required>
-
-        @if ($errors->has('username'))
-            <span class="help-block">
-                <strong>{{ $errors->first('username') }}</strong>
-            </span>
-        @endif
-
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
 
       <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} has-feedback">
         <input id="password" type="password" class="form-control" placeholder="Password" name="password" required>
@@ -108,7 +96,7 @@
       </div>
     </form>
 
-    <a href="{{ route('login') }}" class="text-center">I already have a membership</a>
+    <a href="{{ URL('/login') }}" class="text-center">I already have a membership</a>
   </div>
   <!-- /.form-box -->
 </div>
