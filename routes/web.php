@@ -20,6 +20,7 @@ Auth::routes();
 Route::resource('/peserta', 'PesertaController');
 Route::resource('/home', 'HomeController');
 Route::resource('/log', 'LogController');
+Route::resource('/lab', 'LaboratoriumController');
 
 Route::get('/peserta/addcsv', function () {
     return view('peserta.addcsv');

@@ -12,9 +12,10 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Logbook LBE</h3>
+          <h3 class="box-title">List Laboratorium</h3>
           <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('log.create') }}" ><span class="fa fa-plus"></span> Tambah Logbook LBE</a>            
+            <a type="button" class="btn btn-primary" href="{{ route('lab.create') }}" ><span class="fa fa-plus"></span> Tambah Laboratorium</a>
+            
           </div>
         </div>
         <!-- /.box-header -->
@@ -22,26 +23,22 @@
           <table id="example1" class="table table-bordered table-striped">
             <thead>
             <tr>
-              <th>Tanggal</th>
-              <th>Judul</th>
-              <th>Isi</th>
-              <th>Pemateri</th>
-              <th>Status</th>
+              <th>Nama Lab.</th>
+              <th>Deskripsi Lab.</th>
               <th>Menu</th>
+              <!-- <th>Engine version</th>
+              <th>CSS grade</th> -->
             </tr>
             </thead>
             <tbody>
             <tr>
-              <td>tanggal</td>
-              <td>judul</td>
-              <td>isi</td>
-              <td>Pemateri</td>
-              <td>Status</td>
+              <td>nama lab
+              </td>
+              <td>deskripsi Lab</td>
               <td align="center" width="30px">
-                <a href="#" class="btn btn-warning btn-sm" role="button">
+                <a href="" class="btn btn-warning btn-sm" role="button">
                 <i class="fa fa-pencil-square"></i> Edit</a>
               </td>
-
               <!-- <td>X</td> -->
             </tr>
             </tbody>

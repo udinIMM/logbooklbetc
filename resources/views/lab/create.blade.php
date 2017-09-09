@@ -22,7 +22,7 @@
     <div class="col-xs-12">
       <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Tambah Peserta LBE</h3>
+              <h3 class="box-title">Tambah Laboratorium</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -30,23 +30,15 @@
               {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputNRP1">NRP</label>
-                  <input type="text" class="form-control" id="exampleInputNRP1" placeholder="NRP">
+                  <label for="nama">Nama Laboratorium</label>
+                  <input type="text" class="form-control" id="nama" placeholder="Nama">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="deskripsi">Deskripsi Laboratorium</label>
+                  <input type="text" class="form-control" id="deskripsi" placeholder="Deskripsi">
                 </div>
-                <div class="dropdown">
-                  Pilih peran dibawah ini:<br/>
-                  <select name="role">
-                      <option value="peserta" selected="selected">Peserta LBE</option>
-                      <option value="admin">Admin Lab.</option>
-                      <option value="kdpm">KDPM</option>
-                  </select>
-                </div>
+                
               </div>
-              <br />
               <!-- /.box-body -->
 
               <div class="box-footer">

@@ -4,19 +4,6 @@
 @endsection
 
 @section('content')
-<!-- Content Header (Page header) -->
-<section class="content-header">
-  <h1>
-    General Form Elements
-    <small>Preview</small>
-  </h1>
-  <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Forms</a></li>
-    <li class="active">General Elements</li>
-  </ol>
-</section>
-
 <section class="content">
   <div class="row">
     <div class="col-md-12">
@@ -30,21 +17,23 @@
           {{ csrf_field() }}
           <div class="box-body">
             <div class="form-group">
-              <label>Lecturer</label>
-              <input type="text" class="form-control input-lg" placeholder="Enter Lecturer's Name" name="lecturer">
+              <label>Pemateri</label>
+              <input type="text" class="form-control input-lg" placeholder="Pemateri" name="lecturer">
             </div>
             <div class="form-group">
-              <label>Title</label>
-              <input type="text" class="form-control input-lg" placeholder="Enter Title" name="judul">
+              <label>Judul</label>
+              <input type="text" class="form-control input-lg" placeholder="Judul" name="judul">
             </div>
             <div class="form-group">
-              <textarea class="form-control" id="summary-ckeditor" name="isi"></textarea>
+              <textarea class="form-control input-lg" id="summary-ckeditor" placeholder="Isi" name="isi"></textarea>
             </div>
           </div>
           <!-- /.box-body -->
 
           <div class="box-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            {!! Form::button('<i class="fa fa-plus-square"></i>'. ' Simpan', array('type' => 'submit', 'class' => 'btn btn-primary'))!!}
+            {!! Form::button('<i class="fa fa-times"></i>'. ' Reset', array('type' => 'reset', 'class' => 'btn btn-danger'))!!}
+            {!! Form::close()!!}
           </div>
         </form>
       </div>

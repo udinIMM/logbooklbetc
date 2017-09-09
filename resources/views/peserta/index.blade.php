@@ -6,18 +6,6 @@
 @endsection
 
 @section('content')
-<!-- <section class="content-header">
-  <h1>
-    Data Tables
-    <small>advanced tables</small>
-  </h1>
-  <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Tables</a></li>
-    <li class="active">Data tables</li>
-  </ol>
-</section> -->
-
 <!-- Main content -->
 <section class="content">
   <div class="row">
@@ -32,9 +20,11 @@
           </div>
         </div>
         <!-- /.box-header -->
+        @if($users->count())
         <div class="box-body">
           <table id="example1" class="table table-bordered table-striped">
             <thead>
+            @foreach($users as $m)
             <tr>
               <th>NRP</th>
               <th>Nama</th>
@@ -46,11 +36,14 @@
             </thead>
             <tbody>
             <tr>
-              <td>nrp</td>
-              <td>nama
+              <td>{{ $m->nrp }}</td>
+              <td>{{ $m->nama }}
               </td>
-              <td>Peserta LBE</td>
-              <td> </td>
+              <td>{{ $m->role }}</td>
+              <td align="center" width="30px">
+                <a href="/peserta/{{$m->nrp}}/edit" class="btn btn-warning btn-sm" role="button">
+                <i class="fa fa-pencil-square"></i> Edit</a>
+              </td>
               <!-- <td>X</td> -->
             </tr>
             </tbody>
@@ -63,9 +56,16 @@
               <th>CSS grade</th>
             </tr>
             </tfoot> -->
+            @endforeach
           </table>
         </div>
         <!-- /.box-body -->
+        @else
+        <div class="alert alert-warning">
+         <i class="fa fa-exclamation-triangle"></i> Data Peserta tidak Ada
+        </div>
+        @endif
+
       </div>
       <!-- /.box -->
     </div>

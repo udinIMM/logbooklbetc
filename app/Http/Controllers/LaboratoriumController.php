@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use DB;
 
-class PesertaController extends Controller
+class LaboratoriumController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class PesertaController extends Controller
      */
     public function index()
     {
-        $users=DB::table('users')->join('laboratorium','users.laboratorium_id','=','laboratorium.id')->get();
-        return view('peserta.index',compact('users'));
+        return view('lab.index',compact('lab'));
+        $lab=laboratorium::paginate(20);
     }
 
     /**
@@ -26,7 +25,7 @@ class PesertaController extends Controller
      */
     public function create()
     {
-        return view('peserta.create');
+        return view('lab.create');
     }
 
     /**
@@ -37,29 +36,7 @@ class PesertaController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = $this->validation($request);
-
-        if($validator->fails())
-        {
-            return Redirect::to($request->url().'/create')
-                ->withErrors($validator)->withInput();
-        }
-  
-        $mytime = Carbon::now();
-  
-        $usr = new Users;
-        $usr->id = Uuid::generate();
-        $usr->judul = $request->judul;
-        $usr->isi = $request->lecturer;
-  
-        if($usr->save())
-        {
-            return Redirect::to($request->url());
-        }
-        else
-        {
-            return Redirect::to($request->url().'/create');
-        }
+        //
     }
 
     /**
@@ -81,8 +58,7 @@ class PesertaController extends Controller
      */
     public function edit($id)
     {
-        $usr = users::findorfail($users);
-        return view ('peserta.edit',compact('usr'));
+        //
     }
 
     /**
@@ -94,9 +70,7 @@ class PesertaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $usr = users::findorfail($users);
-        $usr->update($request->all());
-        return redirect('/peserta');
+        //
     }
 
     /**
