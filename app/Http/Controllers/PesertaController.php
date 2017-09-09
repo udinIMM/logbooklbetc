@@ -14,7 +14,8 @@ class PesertaController extends Controller
      */
     public function index()
     {
-        return view('laboratorium.peserta');
+        return view('peserta.index',compact('usr'));
+        $usr=users::paginate(20);
     }
 
     /**
@@ -24,7 +25,7 @@ class PesertaController extends Controller
      */
     public function create()
     {
-        //
+        return view('peserta.create');
     }
 
     /**
@@ -35,7 +36,8 @@ class PesertaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        users::create($request->all());
+        return redirect('/peserta');
     }
 
     /**

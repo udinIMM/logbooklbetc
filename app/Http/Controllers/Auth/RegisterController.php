@@ -19,7 +19,7 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-    protected $username = 'username';
+    protected $username = 'nrp';
 
     use RegistersUsers;
 
@@ -50,10 +50,10 @@ class RegisterController extends Controller
     {
         // dd($data);
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'nama' => 'required|string|max:255',
             // 'id_lab' => 'required|integer|max:255',
-            'nrp_peserta' => 'required|string',
-            'username' => 'required|string',
+            'nrp' => 'required|string',
+            // 'username' => 'required|string',
             'password' => 'required|string|min:6',
             'password-confirm' => 'required|string|min:6|confirmed',
         ]);
@@ -69,11 +69,10 @@ class RegisterController extends Controller
     {
         //dd($data);
         return User::create([
-            'name' => $data['name'],
+            'nama' => $data['nama'],
             // 'id_lab' => $data['id_lab'],
-            'username' => $data['username'],
-            'nrp_peserta' => $data['nrp_peserta'],
-            'username' => $data['username'],
+            // 'username' => $data['username'],
+            'nrp' => $data['nrp'],
             'password' => bcrypt($data['password']),
         ]);
     }
