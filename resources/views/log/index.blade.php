@@ -18,9 +18,11 @@
           </div>
         </div>
         <!-- /.box-header -->
+        @if($log->count())
         <div class="box-body">
           <table id="example1" class="table table-bordered table-striped">
             <thead>
+            @foreach($log as $m)
             <tr>
               <th>Tanggal</th>
               <th>Judul</th>
@@ -32,31 +34,38 @@
             </thead>
             <tbody>
             <tr>
-              <td>tanggal</td>
-              <td>judul</td>
-              <td>isi</td>
-              <td>Pemateri</td>
-              <td>Status</td>
+              <td>{{ $m->tanggal }}</td>
+              <td>{{ $m->judul }}</td>
+              <td>{{ $m->isi }}</td>
+              <td>{{ $m->pemateri }}</td>
+              <td>{{ $m->status }}</td>
               <td align="center" width="30px">
                 <a href="#" class="btn btn-warning btn-sm" role="button">
                 <i class="fa fa-pencil-square"></i> Edit</a>
+              </td>
+              <td align="center" width="30px">
+                {!! Form::open(array('route' => array('log.destroy', $m->id),
+                                     'method' => 'delete',
+                                     'style' => 'display:inline')) !!}
+                <button class='btn btn-sm btn-danger delete-btn' type='submit'>
+                <i class='fa fa-times-circle'></i> Delete </button>
+                {!! Form::close() !!}
               </td>
 
               <!-- <td>X</td> -->
             </tr>
             </tbody>
-            <!-- <tfoot>
-            <tr>
-              <th>Rendering engine</th>
-              <th>Browser</th>
-              <th>Platform(s)</th>
-              <th>Engine version</th>
-              <th>CSS grade</th>
-            </tr>
-            </tfoot> -->
+
+
+            @endforeach
           </table>
         </div>
         <!-- /.box-body -->
+        @else
+        <div class="alert alert-warning">
+         <i class="fa fa-exclamation-triangle"></i> Data Logbook tidak Ada
+        </div>
+        @endif
       </div>
       <!-- /.box -->
     </div>

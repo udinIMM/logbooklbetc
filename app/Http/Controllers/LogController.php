@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 Use Uuid;
 use App\Log;
 use Carbon\Carbon;
+use DB;
 
 class LogController extends Controller
 {
@@ -34,7 +35,8 @@ class LogController extends Controller
      */
     public function index()
     {
-        return view('log.index');
+        $log=DB::table('log')->join('users','log.users_id','=','users.id')->get();
+        return view('log.index',compact('log'));
     }
 
     /**
@@ -65,14 +67,14 @@ class LogController extends Controller
 
       $mytime = Carbon::now();
 
-      $log = new Log;
-      $log->id = Uuid::generate();
-      $log->judul = $request->judul;
-      $log->isi = $request->lecturer;
-      $log->status = "Unverified";
-      $log->tanggal = $mytime->toDateTimeString();
+      $logs = new Log;
+      $logs->id = Uuid::generate();
+      $logs->judul = $request->judul;
+      $logs->isi = $request->lecturer;
+      $logs->status = "Unverified";
+      $logs->tanggal = $mytime->toDateTimeString();
 
-      if($log->save())
+      if($logs->save())
       {
           return Redirect::to($request->url());
       }
@@ -102,9 +104,8 @@ class LogController extends Controller
      */
     public function edit(log $log)
     {
-        $logbook = logs::findorfail($logs);
-        return view ('log.edit',compact('logbook'));
-
+        $logs = log::findorfail($log);
+        return view ('log.edit',compact('logs'));
     }
 
     /**
@@ -125,8 +126,10 @@ class LogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(log $log)
     {
-        //
+        $logs = log::findorfail($log);
+        $logs->delete();
+        return redirect('/log');
     }
 }

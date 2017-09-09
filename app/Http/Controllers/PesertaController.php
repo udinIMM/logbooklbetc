@@ -79,7 +79,7 @@ class PesertaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(users $users)
     {
         $usr = users::findorfail($users);
         return view ('peserta.edit',compact('usr'));
@@ -92,7 +92,7 @@ class PesertaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, users $users)
     {
         $usr = users::findorfail($users);
         $usr->update($request->all());
@@ -105,8 +105,11 @@ class PesertaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(users $users)
     {
-        //
+        $usr = users::findorfail($users);
+        $usr->delete();
+        return redirect('/peserta');
+
     }
 }

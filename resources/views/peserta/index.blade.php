@@ -37,25 +37,23 @@
             <tbody>
             <tr>
               <td>{{ $m->nrp }}</td>
-              <td>{{ $m->nama }}
-              </td>
+              <td>{{ $m->nama }}</td>
               <td>{{ $m->role }}</td>
               <td align="center" width="30px">
                 <a href="/peserta/{{$m->nrp}}/edit" class="btn btn-warning btn-sm" role="button">
                 <i class="fa fa-pencil-square"></i> Edit</a>
               </td>
-              <!-- <td>X</td> -->
+              <td align="center" width="30px">
+                {!! Form::open(array('route' => array('peserta.destroy', $m->nrp),
+                                     'method' => 'delete',
+                                     'style' => 'display:inline')) !!}
+                <button class='btn btn-sm btn-danger delete-btn' type='submit'>
+                <i class='fa fa-times-circle'></i> Delete </button>
+                {!! Form::close() !!}
+              </td>
             </tr>
             </tbody>
-            <!-- <tfoot>
-            <tr>
-              <th>Rendering engine</th>
-              <th>Browser</th>
-              <th>Platform(s)</th>
-              <th>Engine version</th>
-              <th>CSS grade</th>
-            </tr>
-            </tfoot> -->
+            
             @endforeach
           </table>
         </div>

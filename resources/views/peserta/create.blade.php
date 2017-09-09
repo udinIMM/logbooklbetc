@@ -34,6 +34,10 @@
                   <input type="text" class="form-control" id="exampleInputNRP1" placeholder="NRP">
                 </div>
                 <div class="form-group">
+                  <label for="Nama">Nama</label>
+                  <input type="text" class="form-control" id="Nama" placeholder="Nama">
+                </div>
+                <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
                   <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
