@@ -21,13 +21,13 @@ class AuthController extends Controller
 
     $userdata = array(
 
-        'password'  => $request->nrp,
-        'nrp'     => $request->password
+        'nrp'     => $request->nrp,
+        'password'  => $request->password
     );
-
+    dd(Auth::attempt($userdata,true));
     if (Auth::attempt($userdata,true)) //jika data yang diinputkan benar, maka akan ke redirect ke halaman /semua
     {     
-        return redirect('/home');
+        return redirect('/log');
     }
     else{ //jika data yang diinputkan salah, maka akan ke redirect ke halaman login kembali dengan keterangan error
         return redirect('/login')->with('error','Username atau password salah');
